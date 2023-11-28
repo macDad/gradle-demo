@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  artifactory:
+    image: docker.bintray.io/jfrog/artifactory-oss:latest
+    container_name: jfrog-artifactory
+    ports:
+      - "8081:8081"
+      - "8082:8082"
+    environment:
+      - ARTIFACTORY_HOME=/var/opt/jfrog/artifactory
+      - EXTRA_JAVA_OPTIONS=-Xmx2g -Xms512m
+    volumes:
+      - ./data/artifactory:/var/opt/jfrog/artifactory
