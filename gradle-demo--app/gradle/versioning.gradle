@@ -1,0 +1,14 @@
+allprojects {
+    group = 'com.grad.app'
+    ext.buildTimestamp = new Date().format('yyyy-MM-dd HH:mm:ss')
+    project.version = ProjectVersion(1, 0, '0')
+    version = ProjectVersion(1, 0, '0')
+}
+
+String ProjectVersion(int major, int minor, String build) {
+    String fullVersion = "$major.$minor"
+    if (build) {
+        fullVersion += ".$build"
+    }
+    fullVersion
+}

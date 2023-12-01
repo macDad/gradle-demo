@@ -1,6 +1,7 @@
-package com.example.gradledemoapp.controller;
+package com.grad.app.controller;
 
 import com.grad.common.util.DateUtils;
+import com.grad.common.util.RandomStringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ public class WebAppController {
     @GetMapping
     public String whatIsTodayDate(){
 
-        return DateUtils.currentISODateFormat();
+        String random = new RandomStringUtils(10).nextString();
+        return DateUtils.currentISODateFormat() + "----" + random;
     }
 }
