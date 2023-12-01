@@ -21,11 +21,7 @@ public class RandomStringUtils {
     public static final String digits = "0123456789";
 
     public static final String alphanum = upper + lower + digits;
-    public String nextString() {
-        for (int idx = 0; idx < buf.length; ++idx)
-            buf[idx] = symbols[random.nextInt(symbols.length)];
-        return new String(buf);
-    }
+
     public RandomStringUtils(int length, Random random, String symbols) {
         if (length < 1) throw new IllegalArgumentException();
         if (symbols.length() < 2) throw new IllegalArgumentException();
@@ -41,5 +37,12 @@ public class RandomStringUtils {
 
     public RandomStringUtils(int length) {
         this(length, new SecureRandom());
+    }
+
+
+    public String nextString() {
+        for (int idx = 0; idx < buf.length; ++idx)
+            buf[idx] = symbols[random.nextInt(symbols.length)];
+        return new String(buf);
     }
 }

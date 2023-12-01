@@ -7,12 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/date")
 public class WebAppController {
     @GetMapping
     public String whatIsTodayDate(){
-
-        String random = new RandomStringUtils(10).nextString();
-        return DateUtils.currentISODateFormat() + "----" + random;
+        String nextString = new RandomStringUtils(11).nextString();
+        return "Date >>> " + DateUtils.currentISODateFormat() + " next Str >>> " + nextString ;
     }
 }

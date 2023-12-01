@@ -22,7 +22,7 @@ java {
 
 
 group = 'com.grad.common'
-version = '1.0.1'
+version = '1.0.3'
 
 repositories {
     mavenCentral()
@@ -51,7 +51,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = 'com.grad.common'
             artifactId = 'gradle-demo-common'
-            version = "1.0.2-SNAPSHOT"
+            version = "1.0.3-SNAPSHOT"
             from components.java
 
             pom {
