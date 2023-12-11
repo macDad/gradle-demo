@@ -1,0 +1,79 @@
+= Gradle-Demo Project README
+
+== Overview
+
+Welcome to the Gradle-Demo project, a multi-module Gradle project showcasing various subprojects. This project is organized into three submodules:
+
+1. gradle-demo--bom
+2. gradle-demo--common
+3. gradle-demo--app
+
+== Subprojects
+
+=== gradle-demo--bom
+
+This submodule, `gradle-demo--bom` (Bill of Materials), serves as a centralized place for managing and versioning dependencies for the entire Gradle-Demo project. It ensures consistent dependency versions across different modules.
+
+=== gradle-demo--common
+
+The `gradle-demo--common` submodule is a sample common library project. It provides reusable components and functionalities that can be shared among other modules within the Gradle-Demo project.
+
+=== gradle-demo--app
+
+The `gradle-demo--app` submodule is a web application showcasing the usage of the common library and additional features. It represents a practical implementation of the shared components from the `gradle-demo--common` module.
+
+== Project Structure
+
+```plaintext
+Gradle-Demo
+|-- gradle-demo--bom
+|-- gradle-demo--common
+|-- gradle-demo--app
+```
+
+=== Module Details
+
+1. **gradle-demo--bom**
+- Centralized management of dependencies.
+
+2. **gradle-demo--common**
+- Shared common library project.
+
+3. **gradle-demo--app**
+- Web application module utilizing the common library.
+
+== Project Diagram
+
+[graph]
+....
+digraph G {
+  rankdir=LR;
+  "gradle-demo--bom" -> "gradle-demo--common" -> "gradle-demo--app"
+}
+....
+
+The diagram illustrates the dependency flow, with `gradle-demo--bom` providing dependency management for both `gradle-demo--common` and `gradle-demo--app` modules.
+
+== How to Run Locally
+
+Follow these steps to run the Gradle-Demo project locally:
+
+1. **Clone the Repository:**
+```
+git clone <repository-url>
+cd Gradle-Demo
+```
+
+2. **Build the Project:**
+```
+./gradlew build
+```
+
+3. **Run the Web Application:**
+```
+./gradlew :gradle-demo--app:bootRun
+```
+
+   This command starts the web application locally. You can access it in your browser at `http://localhost:8080`.
+
+Feel free to explore each submodule for more details on their functionalities and configurations. Happy coding!
